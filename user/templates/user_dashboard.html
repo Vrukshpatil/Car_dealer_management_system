@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link
+      rel="shortcut icon"
+      href="/static/assets/images/favicon.png"
+      type=""
+    />
+
+    <title>Car Dealer</title>
+
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/static/assets/css/bootstrap.css"
+    />
+
+    <!--owl slider stylesheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <!-- nice select  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+      integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
+      crossorigin="anonymous"
+    />
+    <!-- font awesome style -->
+    <link href="/static/assets/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="/static/assets/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="/static/assets/css/responsive.css" rel="stylesheet" />
+    <style>
+      /* Popup container */
+      .popup {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      /* Popup content */
+      .popup-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Close button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* Form styles */
+      form {
+        margin-top: 20px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+
+      textarea {
+        height: 100px;
+        resize: vertical;
+      }
+
+      button[type="submit"] {
+        background-color: #0b0d0b;
+        color: #ffbe33;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="hero_area">
+      <div class="bg-box">
+        <img src="/static/assets/images/car13.jpg" alt="" />
+      </div>
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <span>Car Dealer</span>
+            </a>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarSupportedContent"
+            >
+              <div class="user_option">
+                <a href="#" class="user_link">
+                  <i class="fa fa-user" aria-hidden="true"></i
+                  >&nbsp;&nbsp;{{username}}
+                  <!-- Replace "John Doe" with the actual user name -->
+                </a>
+                <a
+                  href="user_logout"
+                  class="logout_link"
+                  style="color: #fefefe"
+                >
+                  <i class="fa fa-sign-out" aria-hidden="true"></i
+                  >&nbsp;&nbsp;Logout
+                  <!-- Your logout icon or content -->
+                </a>
+                <a class="cart_link" href="#">
+                  <!-- Your cart icon or content -->
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+      <!-- slider section -->
+      <section class="slider_section">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <br />
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7 col-lg-6">
+                    <div class="detail-box">
+                      <h1>Spring into Savings!</h1>
+                      <p>
+                        "Discover unbeatable deals on our latest models this
+                        season. Drive home your dream car today and experience
+                        luxury like never before."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7 col-lg-6">
+                    <div class="detail-box">
+                      <h1>Experience Luxury on Every Drive!</h1>
+                      <p>
+                        "Elevate your driving experience with our exclusive
+                        selection of premium cars. Find sophistication,
+                        performance, and comfort in every ride."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7 col-lg-6">
+                    <div class="detail-box">
+                      <h1>Redefine Adventure Behind the Wheel!</h1>
+                      <p>
+                        "Embark on thrilling journeys with our diverse range of
+                        rugged yet refined vehicles. From off-road explorations
+                        to city escapades, find your perfect companion for every
+                        terrain."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <ol class="carousel-indicators">
+              <li
+                data-target="#customCarousel1"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#customCarousel1" data-slide-to="1"></li>
+              <li data-target="#customCarousel1" data-slide-to="2"></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <!-- end slider section -->
+    </div>
+
+    <!-- offer section -->
+
+    <!-- end offer section -->
+
+    <!-- food section -->
+    <br /><br />
+    <section class="food_section layout_padding-bottom" id="cars">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>Explore Our Featured Car Collection!</h2>
+        </div>
+
+        <br />
+
+        <div class="filters-content">
+          <div class="row grid">
+            {% for x in data %}
+            <div class="col-sm-6 col-lg-4 all pizza">
+              <div class="box">
+                <div>
+                  <div class="img-box">
+                    <!-- Add a class to the image to identify it -->
+                    <img
+                      src="{{x.car_img1}}"
+                      class="popup-trigger"
+                      alt=""
+                      data-img="{{x.car_img2}}"
+                    />
+                  </div>
+                  <div class="detail-box">
+                    <h5>{{x.modal}} ({{x.year}})</h5>
+                    <p>Engine: {{x.Engine}}</p>
+                    <p>Mileage: {{x.Mileage}}</p>
+                    <h6>Price: {{x.price}}</h6>
+                    <p style="text-align: right">
+                      <a
+                        href="#"
+                        class="buy-now-btn"
+                        style="color: #ffbe33"
+                        data-id="{{x.id}}"
+                        >Enquiry</a
+                      >
+                    </p>
+                    <div class="options"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div id="buyNowForm" class="popup">
+        <div class="popup-content">
+          <span class="close" id="closeBuyNowForm">&times;</span>
+          <h3>Fill in your details</h3>
+          <form id="purchaseForm" action="{% url 'purchase' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" id="carId" name="carId" />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            /><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            /><br />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Phone number"
+              required
+            /><br />
+            <textarea
+              id="address"
+              name="address"
+              placeholder="Address"
+              required
+            ></textarea
+            ><br />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="imagePopup" class="popup">
+        <div class="popup-content">
+          <span class="close" id="closeImagePopup">&times;</span>
+          <div class="image-container">
+            <img
+              id="selectedImage"
+              src=""
+              alt=""
+              style="width: 450px; height: auto"
+            />
+            <div class="scroll-arrow left">&lt;</div>
+            <div class="scroll-arrow right">&gt;</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const buyNowButtons = document.querySelectorAll(".buy-now-btn");
+          const buyNowForm = document.getElementById("buyNowForm");
+          const purchaseForm = document.getElementById("purchaseForm");
+          const carIdInput = document.getElementById("carId");
+          const imagePopup = document.getElementById("imagePopup");
+          const selectedImage = document.getElementById("selectedImage");
+          const scrollLeftArrow = imagePopup.querySelector(".left");
+          const scrollRightArrow = imagePopup.querySelector(".right");
+
+          let currentImageIndex = 0;
+          let images = [];
+
+          buyNowButtons.forEach((button) => {
+            button.addEventListener("click", function (event) {
+              event.preventDefault();
+              const carId = button.getAttribute("data-id");
+              carIdInput.value = carId;
+              buyNowForm.style.display = "block";
+            });
+          });
+
+          const carImages = document.querySelectorAll(".popup-trigger");
+          carImages.forEach((image, index) => {
+            image.addEventListener("click", function () {
+              const imgUrl1 = image.getAttribute("src");
+              const imgUrl2 = image.getAttribute("data-img");
+              images = [imgUrl1, imgUrl2];
+              currentImageIndex = 0;
+              selectedImage.src = images[currentImageIndex];
+              imagePopup.style.display = "block";
+            });
+          });
+
+          scrollLeftArrow.addEventListener("click", function () {
+            currentImageIndex =
+              (currentImageIndex - 1 + images.length) % images.length;
+            selectedImage.src = images[currentImageIndex];
+          });
+
+          scrollRightArrow.addEventListener("click", function () {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            selectedImage.src = images[currentImageIndex];
+          });
+
+          const closeButton = imagePopup.querySelector(".close");
+          closeButton.addEventListener("click", function () {
+            imagePopup.style.display = "none";
+          });
+
+          window.addEventListener("click", function (event) {
+            if (event.target == imagePopup) {
+              imagePopup.style.display = "none";
+            }
+          });
+        });
+      </script>
+
+      <div id="imagePopup" class="popup">
+        <div class="popup-content">
+          <span class="close">&times;</span>
+          <img id="selectedImage" alt="" />
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const buyNowButtons = document.querySelectorAll(".buy-now-btn");
+          const buyNowForm = document.getElementById("buyNowForm");
+          const purchaseForm = document.getElementById("purchaseForm");
+          const carIdInput = document.getElementById("carId");
+          const imagePopup = document.getElementById("imagePopup");
+          const selectedImage = document.getElementById("selectedImage");
+          const closeImagePopup = document.getElementById("closeImagePopup");
+          closeBuyNowForm.addEventListener("click", function () {
+            buyNowForm.style.display = "none";
+          });
+
+          // Event listener for clicking on close button in the image popup
+          closeImagePopup.addEventListener("click", function () {
+            imagePopup.style.display = "none";
+          });
+          buyNowButtons.forEach((button) => {
+            button.addEventListener("click", function (event) {
+              event.preventDefault();
+              const carId = button.getAttribute("data-id");
+              carIdInput.value = carId;
+              buyNowForm.style.display = "block";
+            });
+          });
+
+          // Event listener for form submission
+          purchaseForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const formData = new FormData(purchaseForm);
+
+            // Send form data via AJAX
+            fetch(purchaseForm.action, {
+              method: "POST",
+              body: formData,
+              headers: {
+                "X-CSRFToken": "{{ csrf_token }}", // Replace with your CSRF token
+              },
+            })
+              .then((response) => {
+                if (response.ok) {
+                  // If form submission is successful, close the popup
+                  buyNowForm.style.display = "none";
+                  return response.json();
+                } else {
+                  throw new Error("Form submission failed");
+                }
+              })
+              .then((data) => {
+                // Handle success if needed
+                console.log(data);
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          });
+
+          // Event listener for clicking on car images
+          const carImages = document.querySelectorAll(".popup-trigger");
+          carImages.forEach((image) => {
+            image.addEventListener("click", function () {
+              const imgUrl = image.getAttribute("data-img");
+              selectedImage.src = imgUrl;
+              imagePopup.style.display = "block";
+            });
+          });
+
+          // Close the image popup when the close button is clicked
+          const closeButton = imagePopup.querySelector(".close");
+          closeButton.addEventListener("click", function () {
+            imagePopup.style.display = "none";
+          });
+
+          // Close the image popup when clicking outside of it
+          window.addEventListener("click", function (event) {
+            if (event.target === imagePopup) {
+              imagePopup.style.display = "none";
+            }
+          });
+        });
+      </script>
+    </section>
+
+    <!-- end food section -->
+
+    <!-- about section -->
+
+    <!-- end about section -->
+
+    <!-- book section -->
+
+    <!-- end book section -->
+
+    <!-- client section -->
+
+    <!-- end client section -->
+
+    <!-- footer section -->
+
+    <!-- footer section -->
+
+    <!-- jQery -->
+    <script src="/static/assets/js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap js -->
+    <script src="/static/assets/js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- isotope js -->
+    <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+    <!-- nice select -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+    <!-- custom js -->
+    <script src="/static/assets/js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+    <!-- End Google Map -->
+  </body>
+</html>
